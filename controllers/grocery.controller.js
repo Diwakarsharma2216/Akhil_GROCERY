@@ -1,5 +1,5 @@
 import Grocery from "../model/grocery.model.js"
-import seedData from "../seed/grocery.seed.json" assert { type: "json" };
+import seedData from "../seed/grocery.seed.json" 
 
 export const listGroceries = async (req, res) => {
   try {
