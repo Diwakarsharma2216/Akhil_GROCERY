@@ -4,7 +4,10 @@ import groceryRoutes from "./routes/grocery.routes.js"
 import { connectDB } from "./config/db.js"
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+}));
 app.use(express.json());
 
 // connect database
