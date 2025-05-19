@@ -6,7 +6,6 @@ import {
   updateGrocery,
   patchGrocery,
   deleteGrocery,
-  seedGroceries,
 } from "../controllers/grocery.controller.js"
 
 const router = Router();
@@ -16,7 +15,7 @@ router.post("/", createGrocery);
 router.put("/:id", updateGrocery);
 router.patch("/:id", patchGrocery);
 router.delete("/:id", deleteGrocery);
-router.post("/seed", seedGroceries);
+
 
 
 export default router;

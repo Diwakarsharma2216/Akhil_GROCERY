@@ -1,5 +1,4 @@
 import Grocery from "../model/grocery.model.js"
-import seedData from "../seed/grocery.seed.json" 
 
 export const listGroceries = async (req, res) => {
   try {
@@ -72,13 +71,3 @@ export const deleteGrocery = async (req, res) => {
   }
 };
 
-export const seedGroceries = async (_req, res) => {
-  try {
-    const count = await Grocery.countDocuments();
-    if (count) return res.status(400).json({ message: "Database already seeded" });
-    await Grocery.insertMany(seedData);
-    res.json({ message: "Seed successful", inserted: seedData.length });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
